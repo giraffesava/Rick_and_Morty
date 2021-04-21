@@ -4,7 +4,7 @@ import HtmlWebpackPlugin from 'html-webpack-plugin'
 import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin'
 import { TsconfigPathsPlugin } from 'tsconfig-paths-webpack-plugin'
 
-const webpackConfig = (env): Configuration => ({
+const webpackConfig = (): Configuration => ({
   entry: './src/index.tsx',
   devServer: {
     stats: 'errors-only',
@@ -19,6 +19,25 @@ const webpackConfig = (env): Configuration => ({
   },
   module: {
     rules: [
+      {
+        test: /\.css$/,
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              importLoaders: 1,
+              modules: true,
+            },
+          },
+        ],
+        include: /\.module\.css$/,
+      },
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader'],
+        exclude: /\.module\.css$/,
+      },
       {
         test: /\.tsx?$/,
         loader: 'ts-loader',
