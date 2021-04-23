@@ -2,12 +2,12 @@ import { AllEpisodesTypes } from './allEpisodes.actions'
 import { AllEpisodesStore, ActionType } from './../types'
 
 const initialState: AllEpisodesStore = {
-  episodes: {},
+  episodes: [],
   error: false,
   loading: false,
 }
 
-const reducer = (
+const allEpisodesReducer = (
   state = initialState,
   action: ActionType,
 ): AllEpisodesStore => {
@@ -33,4 +33,4 @@ const reducer = (
   }
 }
 
-export default reducer
+export default allEpisodesReducer

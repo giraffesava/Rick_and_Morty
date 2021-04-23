@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 export enum AllEpisodesTypes {
   ALL_EPISODES_REQUEST = 'ALL_EPISODES_REQUEST',
   ALL_EPISODES_SUCCESS = 'ALL_EPISODES_SUCCESS',
@@ -9,9 +10,7 @@ export const allEpisodesRequest = (): ActionType => ({
   type: AllEpisodesTypes.ALL_EPISODES_REQUEST,
 })
 
-export const allEpisodesSuccess = (
-  payload: Array<string | number>,
-): ActionType => ({
+export const allEpisodesSuccess = (payload: any): ActionType => ({
   type: AllEpisodesTypes.ALL_EPISODES_SUCCESS,
   payload,
 })

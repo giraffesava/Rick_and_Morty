@@ -1,9 +1,8 @@
-import {} from './../types'
 import { AllEpisodesStore } from './../types'
 
 interface StateType {
-  allEpisodes: AllEpisodesStore
+  allEpisodesReducer: AllEpisodesStore
 }
 
 export const selectAllEpisodes = (state: StateType): AllEpisodesStore =>
-  state.allEpisodes
+  state.allEpisodesReducer.episodes
