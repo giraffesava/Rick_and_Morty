@@ -20,6 +20,15 @@ const webpackConfig = (): Configuration => ({
   module: {
     rules: [
       {
+        test: /\.(jpg|png|svg)$/,
+        use: {
+          loader: 'url-loader',
+          options: {
+            limit: 25000,
+          },
+        },
+      },
+      {
         test: /\.css$/,
         use: [
           'style-loader',
