@@ -1,0 +1,11 @@
+.headerwrapper {
+  background-color: rgba(161, 161, 161, 0.301);
+  color: #fff;
+}
+
+.headerwrapper h1{
+  font-size: 45px;
+  margin: 0 10px;
+  text-align: left;
+  color:rgba(251, 245, 107, 0.8)
+}

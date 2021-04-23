@@ -1,5 +1,26 @@
-.episodeContainer {
-  border: 2px solid red;
-  width: 100px;
-  height: 40px;
+.episodeWrapper {
+  width: 90%;
+  display: block;
+  margin: 0 auto;
+  box-sizing: border-box;
+  border-radius: 20px;
+}
+
+.everyEpisode {
+  color: #fff;
+  justify-content: center;
+}
+.everyEpisode p{
+  color: rgb(58, 58, 58);
+  font-size: 20px;
+  text-align: center;
+  padding: 2px 0;
+  font-weight: 900;
+}
+
+.episodeWrapper:hover{
+  background-color: rgba(43, 44, 42, 0.7);
+}
+.everyEpisode p:hover {
+  color: #fff;
 }
