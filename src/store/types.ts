@@ -6,7 +6,17 @@ export interface ActionType {
 }
 
 export interface AllEpisodesStore {
+  map?: any
   episodes: any
   loading: boolean
   error: boolean
+}
+
+export interface Episodes {
+  id: string
+  characters: Array<string>
+  air_date: string
+  episodes: Array<string>
+  name: string
+  [x: string]: any
 }
