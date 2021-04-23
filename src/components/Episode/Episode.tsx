@@ -1,10 +1,14 @@
 import React from 'react'
 import classes from './Episode.module.css'
+import { Props } from './../types'
 
-const Episode: React.FC<any> = () => {
+const Episode: React.FC<Props> = ({ episode, episodes }) => {
+  console.log('Episode', episodes.characters)
   return (
-    <div className={classes.episodeContainer}>
-      <p>Episode 1</p>
+    <div className={classes.episodeWrapper}>
+      <div className={classes.everyEpisode}>
+        <p>Episode {episode}</p>
+      </div>
     </div>
   )
 }

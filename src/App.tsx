@@ -1,9 +1,9 @@
-import Season from 'components/Season/Season'
 import React from 'react'
+import Body from './components/Body/Body'
 
 const App: React.FC = () => (
   <div>
-    <Season />
+    <Body />
   </div>
 )
 

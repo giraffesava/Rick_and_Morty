@@ -1,22 +1,32 @@
-import React, { useEffect } from 'react'
+import React, { useState } from 'react'
 import Episode from './../Episode/Episode'
 import classes from './Season.module.css'
-import { useSelector, useDispatch } from 'react-redux'
-import { selectAllEpisodes } from './../../store/allEpisodes/allEpisodes.selectors'
-import { allEpisodesRequest } from './../../store/allEpisodes/allEpisodes.actions'
+import { Props } from './../types'
 
-const Season: React.FC<any> = () => {
-  const episodes = useSelector(selectAllEpisodes)
-  console.log(episodes)
-  const dispatch = useDispatch()
+const Season: React.FC<Props> = ({ episodes, season }) => {
+  const [hidden, setHidden] = useState(true)
 
-  useEffect(() => {
-    dispatch(allEpisodesRequest())
-  }, [])
+  const closeSeasonHandler = () => {
+    setHidden((prev) => !prev)
+  }
+
+  const addNewViewHandler = () => {}
+
   return (
-    <div className={classes.seasonContainer}>
-      <p>Season 1</p>
-      <Episode />
+    <div className={classes.seasonWrapper}>
+      <div className={classes.headerSeason} onClick={closeSeasonHandler}>
+        <h1>Season: {season}</h1>
+      </div>
+      {!hidden &&
+        episodes.map((item) => {
+          return (
+            <Episode
+              key={item.episodes}
+              episode={Number(item.episodes.split('E')[1])}
+              episodes={item}
+            />
+          )
+        })}
     </div>
   )
 }
