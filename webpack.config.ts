@@ -7,7 +7,12 @@ import { TsconfigPathsPlugin } from 'tsconfig-paths-webpack-plugin'
 const webpackConfig = (): Configuration => ({
   entry: './src/index.tsx',
   devServer: {
+    contentBase: path.resolve(__dirname, 'public/assets'),
     stats: 'errors-only',
+    open: true,
+    port: 8080,
+    compress: true,
+    historyApiFallback: true,
   },
   resolve: {
     extensions: ['.ts', '.tsx', '.js'],
