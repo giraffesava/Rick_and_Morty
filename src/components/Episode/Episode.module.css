@@ -7,20 +7,20 @@
 }
 
 .everyEpisode {
-  color: #fff;
-  justify-content: center;
+  color: rgb(58, 58, 58);
 }
 .everyEpisode p{
-  color: rgb(58, 58, 58);
   font-size: 20px;
   text-align: center;
   padding: 2px 0;
   font-weight: 900;
 }
 
-.episodeWrapper:hover{
+.episodeWrapper:hover .everyEpisode:hover{
   background-color: rgba(43, 44, 42, 0.7);
-}
-.everyEpisode p:hover {
   color: #fff;
+}
+
+.data {
+  font-size: 15px;
 }
