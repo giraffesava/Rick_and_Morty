@@ -1,7 +1,8 @@
 export interface Props {
-  episodes: Episodes
+  episodes?: Episodes
   season?: number
   episode?: number
+  allCharacters?: any
 }
 
 export interface Episodes {
