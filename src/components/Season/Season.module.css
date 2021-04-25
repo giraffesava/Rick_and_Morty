@@ -2,7 +2,7 @@
   border: 1px solid black;
   width: 100%;
   display: block;
-  margin: 10px auto;
+  margin: 20px auto;
   background-color: rgba(251, 245, 107, 0.7);
   border-radius: 20px;
   box-shadow: black;
@@ -16,5 +16,5 @@
 }
 
 .seasonWrapper:hover {
-  transform: scale(1.05);
+  transform: scale(1.03);
 } 

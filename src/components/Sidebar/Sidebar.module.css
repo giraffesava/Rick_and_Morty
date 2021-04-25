@@ -1,7 +1,31 @@
 .sidebar {
-  margin-top: 10px;
+  margin-top: 20px;
   background-color: rgba(251, 245, 107, 0.7);
   border-radius: 20px;
-  width: 200px;
-  height: 200px;
+  width: 300px;
+  height: auto;
+  text-align: center;
+  padding: 5px;
+}
+.sidebar input{
+  border: 5px solid rgb(116, 188, 216);
+  width: 90%;
+  box-sizing: border-box;
+  border-radius: 20px;
+  font-size: 29px;
+  padding:  0 8px
+}
+.episodeContainer{
+  width: 90%;
+  margin: 3px auto;
+}
+
+.sidebar input:focus {
+  outline: none;
+}
+
+.buttonContainer{
+  display: flex;
+  justify-content: center;
+  margin: 10px 0;
 }

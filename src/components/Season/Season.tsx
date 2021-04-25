@@ -10,8 +10,6 @@ const Season: React.FC<Props> = ({ episodes, season }) => {
     setHidden((prev) => !prev)
   }
 
-  const addNewViewHandler = () => {}
-
   return (
     <div className={classes.seasonWrapper}>
       <div className={classes.headerSeason} onClick={closeSeasonHandler}>

@@ -4,9 +4,12 @@ import { Props } from './../types'
 import { Link } from 'react-router-dom'
 
 const Episode: React.FC<Props> = ({ episode, episodes }) => {
-  console.log('Episode', episodes.characters)
   return (
-    <Link to={`/${episodes.id}`} key={episodes.episodes}>
+    <Link
+      to={`/episode/${episodes.id}`}
+      key={episodes.episodes}
+      className={classes.link}
+    >
       <div className={classes.episodeWrapper}>
         <div className={classes.everyEpisode}>
           <p>Episode: {episode}</p>
