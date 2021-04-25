@@ -25,3 +25,11 @@
   display: flex;
   justify-content: space-around;
 }
+
+.contentContainer{
+  background-color: rgba(251, 245, 107, 0.7);
+  width: 85%;
+  margin: 20px auto;
+  padding: 5px 0;
+  border-radius: 20px;
+}
