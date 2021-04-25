@@ -1,12 +1,7 @@
 import { put, takeLatest } from 'redux-saga/effects'
 import { allEpisodesSuccess, allEpisodesFailed } from './allEpisodes.actions'
 import { AllEpisodesTypes } from './allEpisodes.actions'
-
-const urls = [
-  'https://rickandmortyapi.com/api/episode',
-  'https://rickandmortyapi.com/api/episode?page=2',
-  'https://rickandmortyapi.com/api/episode?page=3',
-]
+import { urls } from './../urls'
 
 function* getAllEpisodesWorker() {
   try {

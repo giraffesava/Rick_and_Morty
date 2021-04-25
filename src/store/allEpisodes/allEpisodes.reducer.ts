@@ -1,15 +1,15 @@
-import { AllEpisodesTypes } from './allEpisodes.actions'
-import { AllEpisodesStore, ActionType } from './../types'
+import { AllEpisodesTypes, allEpisodesActions } from './allEpisodes.actions'
+import { AllEpisodesStore } from './../types'
 
-const initialState: AllEpisodesStore = {
+const InitialState: AllEpisodesStore = {
   episodes: [],
   error: false,
   loading: false,
 }
 
 const allEpisodesReducer = (
-  state = initialState,
-  action: ActionType,
+  state = InitialState,
+  action: allEpisodesActions,
 ): AllEpisodesStore => {
   switch (action.type) {
     case AllEpisodesTypes.ALL_EPISODES_REQUEST:

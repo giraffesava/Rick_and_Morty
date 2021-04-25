@@ -12,7 +12,7 @@ export const inputEpisodeGet = (name: string): InputEpisodeTypes => {
     name,
   }
 }
-export const inputEpisodeSuccess = (data: any): InputEpisodeTypes => {
+export const inputEpisodeSuccess = (data: any[]): InputEpisodeTypes => {
   return {
     type: InputEpisode.EPISODE_INPUT_SUCCESS,
     data,
