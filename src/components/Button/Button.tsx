@@ -1,16 +1,15 @@
-import React, { useState } from 'react'
+import React from 'react'
 import classes from './Button.module.css'
 
-const Button: React.FC<any> = ({ children }) => {
-  const [active, setActive] = useState(false)
+interface Props {
+  onClick: () => void
+  children: string
+}
 
-  const buttonHandler = () => {
-    setActive((prev) => !prev)
-  }
-
+const Button: React.FC<Props> = ({ children, onClick }) => {
   return (
     <div>
-      <button type="button" className={classes.button} onClick={buttonHandler}>
+      <button type="button" className={classes.button} onClick={onClick}>
         {children}
       </button>
     </div>
