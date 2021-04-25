@@ -1,9 +1,4 @@
-// import { AllEpisodesStore } from './../types'
+import { StateType, CharactersStore } from './../types'
 
-interface StateType {
-  map: any
-  charactersReducer: any[]
-}
-
-export const selectCharacters = (state): StateType =>
-  state.charactersReducer.payload
+export const selectCharacters = (state: StateType): CharactersStore =>
+  state.charactersReducer

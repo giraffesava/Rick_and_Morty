@@ -11,12 +11,12 @@ export const episodeFilterRequest = (): EpisodeFilterTypes => ({
 })
 
 export const episodeFilterSuccess = (payload: any[]): EpisodeFilterTypes => ({
-  type: EpisodeFilter.EPISODES_REQUEST,
+  type: EpisodeFilter.EPISODES_SUCCESS,
   payload,
 })
 
 export const episodeFilterFailed = (): EpisodeFilterTypes => ({
-  type: EpisodeFilter.EPISODES_REQUEST,
+  type: EpisodeFilter.EPISODES_FAILED,
 })
 
 export type episodeFilterActions =

@@ -1,4 +1,4 @@
-import { InputEpisodeStore } from './../types'
+import { StateType, InputEpisodeStore } from './../types'
 
-export const selectEpisode = (state): InputEpisodeStore =>
-  state.inputEpisodeReducer.data
+export const selectEpisode = (state: StateType): InputEpisodeStore =>
+  state.inputEpisodeReducer

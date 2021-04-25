@@ -4,7 +4,7 @@ import { CharactersStore } from '../types'
 const InitialStore: CharactersStore = {
   error: false,
   loading: false,
-  payload: [],
+  characters: [],
 }
 
 const charactersReducer = (
@@ -22,7 +22,7 @@ const charactersReducer = (
       return {
         ...state,
         loading: false,
-        payload: action.payload,
+        characters: action.payload,
       }
     case Characters.CHARACTERS_FAILED:
       return {

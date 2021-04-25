@@ -1,8 +1,4 @@
-import { EpisodeFilterStore } from './../types'
+import { StateType, EpisodeFilterStore } from './../types'
 
-interface StateType {
-  episodeFilterReducer: EpisodeFilterStore
-}
-
-export const selectorEpisodeFilter = (state): StateType =>
-  state.episodeFilterReducer.data
+export const selectorEpisodeFilter = (state: StateType): EpisodeFilterStore =>
+  state.episodeFilterReducer

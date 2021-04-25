@@ -23,7 +23,6 @@ function* episodeFilterWorker() {
           name: item.name,
         }
       })
-    console.log('from saga:', data2)
     yield put(episodeFilterSuccess(data2))
   } catch {
     yield put(episodeFilterFailed())
