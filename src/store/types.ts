@@ -47,7 +47,7 @@ export interface InputEpisodeTypes {
 }
 
 export interface InputEpisodeStore {
-  map: any
+  map?: any
   loading: boolean
   error: boolean
   data: any[]

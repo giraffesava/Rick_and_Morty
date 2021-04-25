@@ -23,7 +23,10 @@ function* episodeFilterWorker() {
           name: item.name,
         }
       })
-    yield put(episodeFilterSuccess(data2))
+    const filteredData = data2.sort((a, b) =>
+      a.name > b.name ? 1 : b.name > a.name ? -1 : 0,
+    )
+    yield put(episodeFilterSuccess(filteredData))
   } catch {
     yield put(episodeFilterFailed())
   }

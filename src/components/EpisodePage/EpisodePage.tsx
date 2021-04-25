@@ -13,7 +13,7 @@ interface Props {
 
 const EpisodePage: React.FC<Props> = () => {
   const dispatch = useDispatch()
-  const characters = useSelector(selectCharacters)
+  const allcharacters = useSelector(selectCharacters)
   const { id } = useParams()
   useEffect(() => {
     dispatch(charactersRequest(id))
@@ -30,7 +30,7 @@ const EpisodePage: React.FC<Props> = () => {
         />
         <h1>Characters:</h1>
         <div className={classes.characters}>
-          {characters.map((item) => {
+          {allcharacters.characters.map((item) => {
             return (
               <Character
                 key={item.id}
