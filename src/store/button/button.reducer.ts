@@ -18,7 +18,7 @@ const buttonReducer = (
         nameIsOn: false,
       }
     }
-    case Button.BUTTON_SEASON_OFF: {
+    case Button.BUTTON_NAME_ON: {
       return {
         ...state,
         seasonIsOn: false,
