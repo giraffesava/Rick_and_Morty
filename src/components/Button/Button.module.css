@@ -1,0 +1,12 @@
+.button{ 
+  width: 100px;
+  height: 60px;
+  display: inline;
+  padding: 5px 10px;
+  border-radius: 20px;
+  margin: 0 5px;
+}
+
+.button:focus{
+  outline: none;
+}
