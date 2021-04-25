@@ -2,6 +2,7 @@ import { AllEpisodesTypes } from './allEpisodes/allEpisodes.actions'
 import { Characters } from './characters/characters.actions'
 import { InputEpisode } from './inputEpisode/inputEpisode.action'
 import { EpisodeFilter } from './episodeFilter/episodeFilter.action'
+import { Button } from './button/button.action'
 //TYPES FOR allEpisodes
 
 export interface ActionType {
@@ -10,7 +11,6 @@ export interface ActionType {
 }
 
 export interface AllEpisodesStore {
-  map?: any
   episodes: any
   loading: boolean
   error: boolean
@@ -22,7 +22,6 @@ export interface Episodes {
   air_date: string
   episodes: Array<string>
   name: string
-  [x: string]: any
 }
 
 //TYPES FOR Characters
@@ -36,7 +35,7 @@ export interface CharactersTypes {
 export interface CharactersStore {
   loading: boolean
   error: boolean
-  payload: any[]
+  characters: any[]
 }
 
 // TYPES FOR InputEpisode
@@ -48,10 +47,10 @@ export interface InputEpisodeTypes {
 }
 
 export interface InputEpisodeStore {
-  map?: any
+  map: any
   loading: boolean
   error: boolean
-  data: any
+  data: any[]
 }
 
 // TYPES FOR EpisodeFilter
@@ -65,4 +64,23 @@ export interface EpisodeFilterStore {
   data: any[]
   loading: boolean
   error: boolean
+}
+
+// TYPES FOR button
+
+export interface ButtonTypes {
+  type: Button
+}
+
+export interface ButtonStore {
+  seasonIsOn: boolean
+  nameIsOn: boolean
+}
+
+export interface StateType {
+  allEpisodesReducer: AllEpisodesStore
+  charactersReducer: CharactersStore
+  inputEpisodeReducer: InputEpisodeStore
+  episodeFilterReducer: EpisodeFilterStore
+  buttonReducer: ButtonStore
 }
