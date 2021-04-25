@@ -1,6 +1,6 @@
 export interface Props {
   episodes?: Episodes
-  season?: number
+  season?: string
   episode?: number
   allCharacters?: any
 }
