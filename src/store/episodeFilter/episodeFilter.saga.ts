@@ -4,13 +4,13 @@ import {
   episodeFilterSuccess,
   episodeFilterFailed,
 } from './episodeFilter.action'
-import { urls } from './../urls'
+import { allEpisodesurls } from './../urls'
 
 function* episodeFilterWorker() {
   try {
     yield delay(2000)
     const data = yield Promise.all(
-      urls.map((url) => fetch(url).then((res) => res.json())),
+      allEpisodesurls.map((url) => fetch(url).then((res) => res.json())),
     )
     const data2 = yield data
       .reduce((acc, items) => acc.concat(items.results), [])

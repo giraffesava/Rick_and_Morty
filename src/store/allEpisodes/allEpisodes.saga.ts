@@ -1,12 +1,12 @@
 import { put, takeLatest } from 'redux-saga/effects'
 import { allEpisodesSuccess, allEpisodesFailed } from './allEpisodes.actions'
 import { AllEpisodesTypes } from './allEpisodes.actions'
-import { urls } from './../urls'
+import { allEpisodesurls } from './../urls'
 
 function* getAllEpisodesWorker() {
   try {
     const data = yield Promise.all(
-      urls.map((url) => fetch(url).then((res) => res.json())),
+      allEpisodesurls.map((url) => fetch(url).then((res) => res.json())),
     )
     const data2 = data
       .reduce((acc, items) => acc.concat(items.results), [])

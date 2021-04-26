@@ -1,4 +1,5 @@
 import { call, put, takeEvery } from 'redux-saga/effects'
+import { episodeUrl } from './../urls'
 import {
   charactersSuccess,
   charactersFailed,
@@ -6,9 +7,7 @@ import {
 } from './characters.actions'
 
 const getEpisode = (episode) =>
-  fetch(`https://rickandmortyapi.com/api/episode/${episode.id}`).then((res) =>
-    res.json(),
-  )
+  fetch(`${episodeUrl}${episode.id}`).then((res) => res.json())
 
 function* getCharactersWorker(episode) {
   try {

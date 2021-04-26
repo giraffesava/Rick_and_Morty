@@ -1,4 +1,5 @@
 import { takeLatest, call, put, delay } from 'redux-saga/effects'
+import { nameUrl } from './../urls'
 import {
   inputEpisodeSuccess,
   inputEpisodeFailed,
@@ -6,9 +7,7 @@ import {
 } from './inputEpisode.action'
 
 const getUrl = (name) =>
-  fetch(
-    `https://rickandmortyapi.com/api/episode/?name=${name.name}`,
-  ).then((res) => res.json())
+  fetch(`${nameUrl}${name.name}`).then((res) => res.json())
 
 function* inputEpisodeWorker(name) {
   try {
