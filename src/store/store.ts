@@ -6,6 +6,7 @@ import { composeWithDevTools } from 'redux-devtools-extension'
 import { getCharactersWatcher } from './characters/characters.saga'
 import { inputEpisodeWatcher } from './inputEpisode/inputEpisode.saga'
 import { episodeFilterWatcher } from './episodeFilter/episodeFilter.saga'
+import { locationWatcher } from './location/location.saga'
 
 export const initStore = (): any => {
   const sagaMiddleware = createSagaMiddleware()
@@ -17,5 +18,6 @@ export const initStore = (): any => {
   sagaMiddleware.run(getCharactersWatcher)
   sagaMiddleware.run(inputEpisodeWatcher)
   sagaMiddleware.run(episodeFilterWatcher)
+  sagaMiddleware.run(locationWatcher)
   return store
 }

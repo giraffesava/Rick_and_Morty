@@ -4,6 +4,7 @@ import charactersReducer from './characters/characters.reducer'
 import inputEpisodeReducer from './inputEpisode/inputEpisode.reducer'
 import episodeFilterReducer from './episodeFilter/episodeFilter.reducer'
 import buttonReducer from './button/button.reducer'
+import locationReducer from './location/location.reducer'
 
 export const rootReducer = combineReducers({
   allEpisodesReducer,
@@ -11,4 +12,5 @@ export const rootReducer = combineReducers({
   inputEpisodeReducer,
   episodeFilterReducer,
   buttonReducer,
+  locationReducer,
 })

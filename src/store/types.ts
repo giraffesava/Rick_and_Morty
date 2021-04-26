@@ -3,6 +3,8 @@ import { Characters } from './characters/characters.actions'
 import { InputEpisode } from './inputEpisode/inputEpisode.action'
 import { EpisodeFilter } from './episodeFilter/episodeFilter.action'
 import { Button } from './button/button.action'
+import { Location } from './location/location.actions'
+
 //TYPES FOR allEpisodes
 
 export interface ActionType {
@@ -77,10 +79,27 @@ export interface ButtonStore {
   nameIsOn: boolean
 }
 
+// TYPES FOR location
+
+export interface LocationTypes {
+  type: Location
+  id?: string
+  payload?: any
+}
+
+export interface LocationStore {
+  data: any
+  loading: boolean
+  error: boolean
+}
+
+// TYPES FOR selectors
+
 export interface StateType {
   allEpisodesReducer: AllEpisodesStore
   charactersReducer: CharactersStore
   inputEpisodeReducer: InputEpisodeStore
   episodeFilterReducer: EpisodeFilterStore
   buttonReducer: ButtonStore
+  locationReducer: LocationStore
 }
