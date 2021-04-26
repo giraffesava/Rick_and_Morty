@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { locationRequestAction } from './../../store/location/location.actions'
 import { selectLocation } from './../../store/location/location.selector'
@@ -10,7 +10,7 @@ const Location: React.FC<any> = (props) => {
   const location = useSelector(selectLocation)
   const { id } = props.match.params
 
-  useState(() => {
+  useEffect(() => {
     dispatch(locationRequestAction(id))
   }, [])
 
