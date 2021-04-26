@@ -20,6 +20,11 @@
   margin: 3px auto;
 }
 
+.sidebar p {
+  font-weight: 900;
+  font-size: 30px;
+}
+
 .sidebar input:focus {
   outline: none;
 }
