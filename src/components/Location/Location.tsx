@@ -22,11 +22,15 @@ const Location: React.FC<any> = (props) => {
         src="https://cdn.hipwallpaper.com/i/56/3/o2iEmS.jpg"
         alt="wallpaper"
       />
-      <div className={classes.textContainer}>
-        <h1>Name: {location.data.name}</h1>
-        <h1>Type: {location.data.type}</h1>
-        <h1>Dimension: {location.data.dimension}</h1>
-      </div>
+      {!location.data.error ? (
+        <div className={classes.textContainer}>
+          <h1>Name: {location.data.name}</h1>
+          <h1>Type: {location.data.type}</h1>
+          <h1>Dimension: {location.data.dimension}</h1>
+        </div>
+      ) : (
+        <h1 className={classes.textContainer}>Location Not Found :(</h1>
+      )}
     </div>
   )
 }
