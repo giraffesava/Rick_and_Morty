@@ -4,12 +4,27 @@ import { selectAllEpisodes } from './../../store/allEpisodes/allEpisodes.selecto
 import { allEpisodesRequest } from './../../store/allEpisodes/allEpisodes.actions'
 import Season from 'components/Season/Season'
 import Header from 'components/Header/Header'
-import classes from './Body.module.css'
 import Sidebar from 'components/Sidebar/Sidebar'
 import { episodeFilterRequest } from './../../store/episodeFilter/episodeFilter.action'
 import { selectorEpisodeFilter } from './../../store/episodeFilter/episodeFilter.selector'
 import { selectButton } from './../../store/button/button.selector'
 import Episode from 'components/Episode/Episode'
+import { StyledWallpaper } from '../StyledComponents/StyledWallpaper'
+import styled from 'styled-components'
+
+const Container = styled.div`
+  display: flex;
+  width: 80%;
+  margin: 0 auto;
+  justify-content: space-around;
+`
+
+const ContentContainer = styled.div`
+  background-color: rgba(251, 245, 107, 0.7);
+  width: 50%;
+  padding: 5px 20px;
+  border-radius: 20px;
+`
 
 const Body: React.FC<any> = () => {
   const dispatch = useDispatch()
@@ -23,31 +38,26 @@ const Body: React.FC<any> = () => {
   }, [])
 
   return (
-    <div className={classes.container}>
-      <img
-        className={classes.wallpaper}
+    <>
+      <Header />
+      <StyledWallpaper
         src="https://cdn.hipwallpaper.com/i/56/3/o2iEmS.jpg"
         alt="wallpaper"
       />
-      <Header />
-      <div className={classes.uiContainter}>
-        <div>
-          <Sidebar />
-        </div>
-        <div>
-          {button.seasonIsOn ? (
-            allepisodes.episodes.map((item) => {
-              return (
-                <Season
-                  key={item.season}
-                  season={item.season}
-                  episodes={item.episodes}
-                />
-              )
-            })
-          ) : (
-            <div className={classes.contentContainer}>
-              {filteredEpisode.data.map((item) => {
+      <Container>
+        <Sidebar />
+        <ContentContainer>
+          {button.seasonIsOn
+            ? allepisodes.episodes.map((item) => {
+                return (
+                  <Season
+                    key={item.season}
+                    season={item.season}
+                    episodes={item.episodes}
+                  />
+                )
+              })
+            : filteredEpisode.data.map((item) => {
                 return (
                   <Episode
                     key={item.episodes}
@@ -56,11 +66,9 @@ const Body: React.FC<any> = () => {
                   />
                 )
               })}
-            </div>
-          )}
-        </div>
-      </div>
-    </div>
+        </ContentContainer>
+      </Container>
+    </>
   )
 }
 

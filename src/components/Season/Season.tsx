@@ -1,7 +1,24 @@
 import React, { useState } from 'react'
 import Episode from './../Episode/Episode'
-import classes from './Season.module.css'
 import { Props } from './../types'
+import styled from 'styled-components'
+
+const SeasonWrapper = styled.div`
+  border: 1px solid black;
+  width: 100%;
+  display: block;
+  margin: 20px auto;
+  background-color: rgba(251, 245, 107, 0.7);
+  border-radius: 20px;
+  box-shadow: black;
+  cursor: pointer;
+`
+const Title = styled.h1`
+  font-size: 40px;
+  color: rgb(0, 0, 0);
+  text-align: center;
+  padding: 0 120px;
+`
 
 const Season: React.FC<Props> = ({ episodes, season }) => {
   const [hidden, setHidden] = useState(true)
@@ -11,10 +28,8 @@ const Season: React.FC<Props> = ({ episodes, season }) => {
   }
 
   return (
-    <div className={classes.seasonWrapper}>
-      <div className={classes.headerSeason} onClick={closeSeasonHandler}>
-        <h1>Season: {season}</h1>
-      </div>
+    <SeasonWrapper>
+      <Title onClick={closeSeasonHandler}>Season: {season}</Title>
       {!hidden &&
         episodes.map((item) => {
           return (
@@ -25,7 +40,7 @@ const Season: React.FC<Props> = ({ episodes, season }) => {
             />
           )
         })}
-    </div>
+    </SeasonWrapper>
   )
 }
 
