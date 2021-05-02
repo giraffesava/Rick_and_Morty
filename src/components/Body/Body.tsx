@@ -26,6 +26,11 @@ const ContentContainer = styled.div`
   border-radius: 20px;
 `
 
+const Error = styled.h1`
+  text-align: center;
+  font-size: 50px;
+`
+
 const Body: React.FC<any> = () => {
   const dispatch = useDispatch()
   const allepisodes = useSelector(selectAllEpisodes)
@@ -47,8 +52,9 @@ const Body: React.FC<any> = () => {
       <Container>
         <Sidebar />
         <ContentContainer>
-          {button.seasonIsOn
-            ? allepisodes.episodes.map((item) => {
+          {!allepisodes.error || !filteredEpisode.error ? (
+            button.seasonIsOn ? (
+              allepisodes.episodes.map((item) => {
                 return (
                   <Season
                     key={item.season}
@@ -57,7 +63,8 @@ const Body: React.FC<any> = () => {
                   />
                 )
               })
-            : filteredEpisode.data.map((item) => {
+            ) : (
+              filteredEpisode.data.map((item) => {
                 return (
                   <Episode
                     key={item.episodes}
@@ -65,7 +72,11 @@ const Body: React.FC<any> = () => {
                     episodes={item}
                   />
                 )
-              })}
+              })
+            )
+          ) : (
+            <Error>We have problems...</Error>
+          )}
         </ContentContainer>
       </Container>
     </>

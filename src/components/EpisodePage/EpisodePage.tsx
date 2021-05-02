@@ -23,6 +23,13 @@ const CharacterWrapper = styled.div`
   width: 90%;
 `
 
+const Error = styled.h1`
+  font-size: 70px;
+  text-align: center;
+  width: 100%;
+  background-color: rgba(251, 245, 107, 0.7);
+`
+
 interface Props {
   key: any
   allCharacters?: any
@@ -45,18 +52,22 @@ const EpisodePage: React.FC<Props> = () => {
       />
       <Title>Characters:</Title>
       <CharacterWrapper>
-        {allcharacters.characters.map((item) => {
-          return (
-            <Character
-              key={item.id}
-              id={item.id}
-              image={item.image}
-              name={item.name}
-              species={item.species}
-              status={item.status}
-            />
-          )
-        })}
+        {!allcharacters.error ? (
+          allcharacters.characters.map((item) => {
+            return (
+              <Character
+                key={item.id}
+                id={item.id}
+                image={item.image}
+                name={item.name}
+                species={item.species}
+                status={item.status}
+              />
+            )
+          })
+        ) : (
+          <Error>We have problems...</Error>
+        )}
       </CharacterWrapper>
     </>
   )
