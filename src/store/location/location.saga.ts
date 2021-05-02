@@ -5,13 +5,13 @@ import {
   locationFailedAction,
   Location,
 } from './location.actions'
+
 const getUrl = ({ id }) =>
   fetch(`${locationUrl}${id}`).then((res) => res.json())
 
 function* locationWorker(id) {
   try {
     const data = yield call(getUrl, id)
-    console.log(data)
     yield put(locationSuccessAction(data))
   } catch {
     yield put(locationFailedAction())
