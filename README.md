@@ -1,5 +1,7 @@
-# TEST TASK 
-###### work in process...
+# Rick and Morty website
+
+## This website created only for desktop
+![project_gif](./project.gif)
 
 ## INSTALLATION:
 
@@ -18,3 +20,5 @@
     "redux": "^4.0.5",
     "redux-devtools-extension": "^2.13.9",
     "redux-saga": "^1.1.3"
+
+### I've used this API: https://rickandmortyapi.com/
