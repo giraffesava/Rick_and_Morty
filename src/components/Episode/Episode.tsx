@@ -35,11 +35,3 @@ const Episode: React.FC<Props> = ({ episode, episodes }) => {
 }
 
 export default Episode
-
-{
-  /* <StyledLink
-      padding="0px"
-      to={`/episode/${episodes.id}`}
-      key={episodes.episodes}
-    > */
-}
